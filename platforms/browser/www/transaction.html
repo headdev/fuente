@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+    
+    <!--Css style starts here-->
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/color.css" />
+    
+    <!--Css style ends here-->
+
+    <!--Javascript Library Starts here-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/moment.js"></script>
+    
+    <!--Javascript Library Ends here-->
+</head>
+
+<body>
+    <div data-role="page" id="features" class="secondarypage" data-theme="b">
+        <header>
+            <div data-role="header" data-position="fixed">
+                <div class="nav_left_button"><a href="#" onclick="window.history.back();"><img src="images/icons/left-arrow.png" alt="" title="" /></a></div>
+                <div class="nav_center_logo">
+                    <div class="p-title">
+                        <h2 style="font-size:12px">Transaction</h2></div>
+                </div>
+                <div class="nav_right_button">
+                    <a href="#right-panel"><img src="images/icons/icons8-align-justify-80.png" alt="" title="" /></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="pages_maincontent">
+                <div class="page_content">
+                    <section class="margin-50">
+                        <div class="tabs_content transaction" id="b-tabs">
+                            <div data-role="tabs" id="tabs">
+                                <div data-role="navbar">
+                                    <ul>
+                                        <li><a href="#one" class="ui-btn-active">All</a></li>
+                                        <li><a href="#two">Money In</a></li>
+                                        <li><a href="#three">Money Out</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <!--For All Transactions starts here-->
+
+                                <div id="one">
+                                    <div class="card-main">
+                                        <div class="card-header">
+                                            <h2>Pending</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allPending">
+                                                <tbody>
+                                                    <!-- Dynamic all pending transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="card-header">
+                                            <h2>Completed</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allSuccess">
+                                                <tbody>
+                                                    <!-- Dynamic all successful transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--For All Transactions ends here-->
+
+                                <!--For All MoneyIn Transactions starts here--> 
+
+                                <div id="two">
+                                    <div class="card-main">
+                                        <div class="card-header">
+                                            <h2>Pending</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyInPending">
+                                                <tbody>
+                                                        <!-- Dynamic all pending moneyIn transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="card-header">
+                                            <h2>Completed</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyInSuccess">
+                                                <tbody>
+                                                        <!-- Dynamic all successful moneyIn transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--For All MoneyIn Transactions ends here-->
+
+                                <!--For All MoneyOut Transactions ends here-->
+
+
+                                <div id="three">
+                                    <div class="card-main">
+                                        <div class="card-header">
+                                            <h2>Pending</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyOutPending">
+                                                <tbody>
+                                                      <!-- Dynamic all pending moneyOut transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="card-header">
+                                            <h2>Completed</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyOutSuccess">
+                                                <tbody>
+                                                    <!-- Dynamic all successful moneyOut transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--For All MoneyOut Transactions ends here-->
+
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- /content -->
+        <aside>
+            <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
+                <div class="user_login_info">
+                    <div class="user_thumb_container">
+                        <div class="user_thumb">
+                            <img class="image_src" src="images/author.png" alt="" title="" />
+                        </div>
+                    </div>
+                    <div class="user_details">
+                        <p class="username" style="color: #fff;"></p>
+                    </div>
+                   <nav class="user-nav">
+                        <ul>
+                            <li class="dashboard"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Dashboard</span></a></li>
+                            <li class="editProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">My Profile</span></a></li>
+                            <li class="SendMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Send Money</span></a></li>
+                            <li class="RequestMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Request Money</span></a></li>
+                            <li class="withdrawMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Withdraw Money</span></a></li>
+                            <li class="exchangeMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Exchange Money</span></a></li>
+                            <li class="logout" style="cursor: pointer;" action="logout" data-redirect="login.html"><a><img src="images/icons/black/lock.png" alt="" title="" /><span style="font-size: 12px" class="log-out">Logout</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="close_loginpopup_button"><a href="#" data-rel="close"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            </div>
+        </aside>
+        <!-- /panel -->
+    </div>
+    <!-- /page -->
+    <script type="text/javascript">
+
+            $(window).on('load',function(){
+                $('.username').text(localStorage.getItem('username'));
+                let site_url  = localStorage.getItem('site_url');
+                let url       = site_url+'activityall';
+                let user_id   = localStorage.getItem('user_id');
+                let token     = localStorage.getItem('token');
+                $.ajax({
+                        url : url,
+                        type : "get",
+                        async : false,
+                        data : {'user_id':user_id,'_token':token},
+                        dataType : 'json',
+                        //data may contain three part status of 'success', 'message', 'errors' if success is 0 
+                        success:function(data){                        
+                                //let datas           = data.transactions.data;
+                                let datas           = data.transactions;
+                                let outputPending   = '';
+                                let outputSuccess   = '';
+                                let moneyInPending  = '';
+                                let moneyInSuccess  = '';
+                                let moneyOutPending = '';
+                                let moneyOutSuccess = '';
+
+                                //For all transactions starts here
+                                allTransactions(datas,outputPending,outputSuccess);
+                                //For all transactions ends here
+
+                                //For all moneyIn transactions starts here
+                                allMoneyInTransactions(datas,moneyInPending,moneyInSuccess);                               
+                                //For all moneyIn ends here
+
+                                //For all moneyOut Starts here
+                                allMoneyOutTransactions(datas,moneyOutPending,moneyOutSuccess);
+                                //For all moneyOut ends here
+
+                        },
+                        error: function(errorThrown){
+                                        console.log(errorThrown);
+                        }
+                });
+            });
+        
+            //For all transactions starts here
+            function allTransactions(datas,outputPending,outputSuccess){
+                $.each(datas,function(index,data){
+                        let first_name = capitalizeFirstLetter(data.f_name);
+                        let last_name  = capitalizeFirstLetter(data.l_name);
+                        let date       = data.t_created_at;
+                        let finalDate  = moment(date).format("YYYY-MM-DD"); //2014-07-10
+                        let image_url  = localStorage.getItem('image_url');
+                        let imgSrc;
+                        let imgPhoto   = data.photo;
+                        if(imgPhoto!=''){
+                             imgSrc = image_url+"public/user_dashboard/profile/"+imgPhoto;
+                        }else{
+                             imgSrc = "images/author.png";
+                        }
+                        if(data.status=='Pending'){
+                                    if(data.transaction_type=='Transferred'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Sent</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px;">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    } 
+                                    if(data.transaction_type=='Received'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Received</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Request_From'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Sent</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Request_To'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Received</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }  
+                                    if(data.transaction_type=='Withdrawal'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Withdrawal</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html"data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Deposit'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Deposit</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Voucher_Created' || data.transaction_type=='Voucher_Activated'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Exchange_From'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request To</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Exchange_To'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request To</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }       
+                        }else{
+                                    if(data.transaction_type=='Request_From'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Sent</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Request_To'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Received</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Received'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Received</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    } 
+                                    if(data.transaction_type=='Transferred'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Sent</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    } 
+                                    if(data.transaction_type=='Withdrawal'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Withdrawal</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Deposit'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Deposit</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.subtotal}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Voucher_Created' || data.transaction_type=='Voucher_Activated'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Exchange_From'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Exchange From</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Exchange_To'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Exchange To</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }     
+                        }
+                });
+                if(outputPending==''){
+                  $('.allPending tbody').html('<h4 style="text-align:center">No Record Found!</h4>');
+                }
+                if(outputPending!=''){
+                  $('.allPending tbody').html(outputPending);
+                }
+                if(outputSuccess==''){
+                  $('.allSuccess tbody').html('<h4 style="text-align:center">No Record Found!</h4>');
+                }
+                if(outputSuccess!=''){
+                  $('.allSuccess tbody').html(outputSuccess);
+                }
+            }
+            //For all transactions ends here
+        
+            //For all Money In Transactions Starts here
+            function allMoneyInTransactions(datas,moneyInPending,moneyInSuccess){
+                $.each(datas,function(index,data){
+                                        let first_name = capitalizeFirstLetter(data.f_name);
+                                        let last_name  = capitalizeFirstLetter(data.l_name);
+                                        let date       = data.t_created_at;
+                                        let finalDate  = moment(date).format("YYYY-MM-DD"); //2014-07-10
+                                        let image_url  = localStorage.getItem('image_url');
+                                        let imgSrc;
+                                        let imgPhoto   = data.photo;
+                                        if(imgPhoto!=''){
+                                             imgSrc = image_url+"public/user_dashboard/profile/"+imgPhoto;
+                                        }else{
+                                             imgSrc = "images/author.png";
+                                        }
+                                        if(data.status=='Pending'){
+                                                if(data.transaction_type=='Deposit' || data.transaction_type=='Received' || data.transaction_type=='Voucher_Activated' || data.transaction_type=='Request_From'){
+                                                    if(data.transaction_type=='Received'){
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Received</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                    
+                                                    if(data.transaction_type=='Deposit'){
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Deposit</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.subtotal}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    }
+                                                    if(data.transaction_type=='Voucher_Activated'){
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px;">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                    if(data.transaction_type=='Request_From'){
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Sent</a></h4></td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                }
+                                        }else{
+                                                if(data.transaction_type=='Deposit' || data.transaction_type=='Received' || data.transaction_type=='Voucher_Activated' || data.transaction_type=='Request_From'){
+        
+                                                    if(data.transaction_type=='Received'){
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Received</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                    
+                                                    if(data.transaction_type=='Request_From'){
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Sent</a></h4></td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                    if(data.transaction_type=='Deposit'){
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Deposit</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    }
+                                                    if(data.transaction_type=='Voucher_Activated'){
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                }    
+                                        }
+                });
+                if(moneyInPending==''){
+                  $('.allMoneyInPending tbody').html('<h4 style="text-align:center">No Record Found!</h4>');
+                }
+                if(moneyInPending!=''){
+                  $('.allMoneyInPending tbody').html(moneyInPending);
+                }
+                if(moneyInSuccess==''){
+                  $('.allMoneyInSuccess tbody').html('<h4 style="text-align:center">No Record Found!</h4>');
+                }
+                if(moneyInSuccess!=''){
+                  $('.allMoneyInSuccess tbody').html(moneyInSuccess);
+                }
+            }
+            //For all Money In Transactions ends here
+
+            //For all Money Out Transactions Starts here
+            function allMoneyOutTransactions(datas,moneyOutPending,moneyOutSuccess){
+                $.each(datas,function(index,data){
+                    let first_name = capitalizeFirstLetter(data.f_name);
+                    let last_name  = capitalizeFirstLetter(data.l_name);
+                    let date       = data.t_created_at;
+                    let finalDate  = moment(date).format("YYYY-MM-DD"); //2014-07-10
+                    let image_url  = localStorage.getItem('image_url');
+                    let imgSrc;
+                    let imgPhoto   = data.photo;
+                    if(imgPhoto!=''){
+                         imgSrc = image_url+"public/user_dashboard/profile/"+imgPhoto;
+                    }else{
+                         imgSrc = "images/author.png";
+                    }
+                    if(data.status=='Pending'){
+                            if(data.transaction_type=='Withdrawal' || data.transaction_type=='Transferred' || data.transaction_type=='Voucher_Created'){
+                                if(data.transaction_type=='Transferred'){
+                                    moneyOutPending +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Sent</a></h4></td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                } 
+                                if(data.transaction_type=='Withdrawal'){
+                                    moneyOutPending +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Withdrawal</a></h4></td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }
+          
+                                if(data.transaction_type=='Voucher_Created'){
+                                    moneyOutPending +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+
+                                            </td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }  
+                            }
+                    }else{
+                            if(data.transaction_type=='Withdrawal' || data.transaction_type=='Transferred' || data.transaction_type=='Voucher_Created'){
+
+                                if(data.transaction_type=='Transferred'){
+                                    moneyOutSuccess +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Sent</a></h4>
+                                            </td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                } 
+                                if(data.transaction_type=='Withdrawal'){
+                                    moneyOutSuccess +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Withdrawal</a></h4>
+                                            </td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }
+
+                                if(data.transaction_type=='Voucher_Created'){
+                                    moneyOutSuccess +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:63px;height:48px;border-radius:50%" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4></td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px">${data.curr_symbol} ${data.total}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                } 
+                            }    
+                    }
+                });
+                if(moneyOutPending==''){
+                  $('.allMoneyOutPending tbody').html('<h4 style="text-align:center">No Record Found!</h4>');
+                }
+                if(moneyOutPending!=''){
+                  $('.allMoneyOutPending tbody').html(moneyOutPending);
+                }
+                if(moneyOutSuccess==''){
+                  $('.allMoneyOutSuccess tbody').html('<h4 style="text-align:center">No Record Found!</h4>');
+                }
+                if(moneyOutSuccess!=''){
+                  $('.allMoneyOutSuccess tbody').html(moneyOutSuccess);
+                }
+            }
+            //For all Money Out Transactions Ends here
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.paymoney" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>PayMoney</name>
+    <description>
+        An Online Money Transfer Platform.
+    </description>
+    <author email="support@techvill.net" href="http://techvill.net">
+        Techvillage Team
+    </author>
+    <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
+    <content src="index.html" />
+    <access origin="*" />
+    <access origin="http://*" />
+    <access origin="https://*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <engine name="android" spec="~7.0.0" />
+    <platform name="android">
+        <icon qualifier="ldpi" src="res/icon/android/ldpi.png"/>
+        <icon qualifier="mdpi" src="res/icon/android/mdpi.png"/>
+        <icon qualifier="hdpi" src="res/icon/android/hdpi.png"/>
+        <icon qualifier="xhdpi" src="res/icon/android/xhdpi.png"/>
+        <icon qualifier="xxhdpi" src="res/icon/android/xxhdpi.png"/>
+        <icon qualifier="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
+    </platform>
+</widget>

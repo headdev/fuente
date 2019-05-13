@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+     
+    <!--Css Ends here-->
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/color.css" /> 
+    
+    <!--Css Starts here-->
+
+    <!--Javascript Library Starts here-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!--Javascript Library Ends here-->
+</head>
+
+<body>
+    <div data-role="page" id="features" class="secondarypage" data-theme="b">
+        <header>
+            <div data-role="header" data-position="fixed">
+                <div class="nav_left_button">
+                    <a href="#" onclick="window.history.back();">
+                        <img src="images/icons/left-arrow.png" alt="" title="" />
+                    </a>
+                </div>
+                <div class="nav_center_logo">
+                    <div class="p-title">
+                        <h2 style="font-size:14px">Exchange Money</h2>
+                    </div>
+                </div>
+                <div class="nav_right_button">
+                    <a href="#right-panel">
+                        <img src="images/icons/icons8-align-justify-80.png" alt="" title="" />
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="pages_maincontent">
+                <div class="page_content">
+                    <section>
+                        <div class="dboard-profile">
+                            <div class="pro-left"><a href="#" class="editProfile" data-transition="slidefade"><img style="border-radius: 50%" class="image_src" src="images/author.png" alt="" title="" /></a> </div>
+                            <div class="pro-right">
+                                <h2 style="font-size: 16px" class="username"></h2>
+                                <h4 style="font-size: 16px" class="userphone"></h4>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <ul class="features_list_detailed_available_balance">
+                            <li>
+                                <a href="#" data-transition="slidefade" data-rel="" data-redirect="exchange-money-to-other-confirm.html" class="to_other_currency">
+                                    <div class="feat_small_details">
+                                        <h4 style="font-size: 16px">To Other Currency</h4>
+                                    </div>
+                                    <div class="view_more"><img src="images/icons/right-arrow-white.png" alt="" title="" /></div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!--</div>-->
+                    </section>
+                    <div id="add_div"></div>
+                    <section>
+                        <ul class="features_list_detailed">
+                            <li>
+                                <a href="#" data-transition="slidefade" data-redirect="exchange-money-to-base-confirm.html" class="to_base_currency">
+                                    <div class="feat_small_details">
+                                        <h4 style="font-size: 16px">To Base Currency</h4>
+                                    </div>
+                                    <div class="view_more"><img src="images/icons/right-arrow.png" alt="" title="" /></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+  <aside>
+            <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
+                <div class="user_login_info">
+                    <div class="user_thumb_container">
+                        <div class="user_thumb">
+                            <img class="image_src" src="images/author.png" alt="" title="" />
+                        </div>
+                    </div>
+                    <div class="user_details">
+                        <p class="username" style="color: #fff;"></p>
+                    </div>
+                    <nav class="user-nav">
+                        <ul>
+                            <li class="dashboard"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Dashboard</span></a></li>
+                            <li class="editProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">My Profile</span></a></li>
+                            <li class="SendMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Send Money</span></a></li>
+                            <li class="RequestMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Request Money</span></a></li>
+                            <li class="withdrawMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Withdraw Money</span></a></li>
+                            <li class="exchangeMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Exchange Money</span></a></li>
+                            <li class="logout" style="cursor: pointer;" action="logout" data-redirect="login.html"><a><img src="images/icons/black/lock.png" alt="" title="" /><span style="font-size: 12px" class="log-out">Logout</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="close_loginpopup_button"><a href="#" data-rel="close"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            </div>
+        </aside>
+        <!-- /panel -->
+    </div>
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            let user_id   = localStorage.getItem('user_id');
+            $('.username').text(localStorage.getItem('username'));
+            $('.userphone').text(localStorage.getItem('phone'));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+    
+    <!--Css style starts here-->
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/color.css" />
+    
+    <!--Css style ends here-->
+
+    <!--Javascript Library Starts here-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/moment.js"></script>
+    
+    <!--Javascript Library Ends here-->
+    <style type="text/css">
+        #keyboard {
+        width:132%;
+        margin:0 auto;
+        }
+        ol.keys {
+          list-style-type:none;
+        }
+        ol.keys li {
+          width:25%;
+          display:block;
+          text-align:center;
+          height:2em;
+          float:left;
+          font-size:1.3em;
+          font-family:sans-serif;
+          padding-top:.7em;
+          border:.5px solid rgb(100,100,100);
+          color:white;
+          background-color:#232b47;
+        }
+
+        ol.keys li:hover {
+          cursor:pointer;
+        }
+        ol.keys li:active {
+          background-color:#232b47;
+          color:#000;
+        }
+
+        .ui-page-theme-b .ui-btn {
+            background-color: #fff !important;
+            border-color: transparent !important;
+            color: #000 !important;
+            text-shadow: none;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="features" class="secondarypage" data-theme="b">
+        <header>
+            <div data-role="header" data-position="fixed">
+                <div class="nav_left_button"><a href="#" onclick="window.history.back();"><img src="images/icons/left-arrow.png" alt="" title="" /></a></div>
+                <div class="nav_center_logo">
+                    <div class="p-title">
+                        <h2 style="font-size:14px">Exchange Money</h2></div>
+                </div>
+                <div class="nav_right_button">
+                    <a href="#right-panel"><img src="images/icons/icons8-align-justify-80.png" alt="" title="" /></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="pages_maincontent">
+                <div class="page_content">
+
+                    <section class="margin-50" style="margin-top: 40px;">
+                            <div class="Divs">
+                                <p class="requestMoney" style="color: green;text-align: center;font-size: 14px;font-weight: bold;margin-bottom: 40px;"></p>
+                            </div>
+                            <div class="loginform">
+                                                                    
+                                <form id="LoginForm" class="moneyForm" method="post">
+                                    <input type="text" readonly id="sendDisplay" name="amount" value="" class="form_input require" placeholder="0.00" data-role="none" />
+                                    <select name="currency" id="sendCurrency" required="true">
+                                        <option value="">Choose one</option>
+                                    </select>
+                                    <span id="currencyValidate" style="padding: 0 0 10px 0;width: 100%;text-align: left;font-size: 14px;color: red;font-weight: 400;"></span>
+                                    <div id="keyboard">
+                                      <ol class="keys">
+                                         <li data-number='1'>1</li>
+                                         <li data-number='2'>2</li>
+                                         <li data-number='3'>3</li>
+                                         <li data-number='4'>4</li>
+                                         <li data-number='5'>5</li>
+                                         <li data-number='6'>6</li>
+                                         <li data-number='7'>7</li>
+                                         <li data-number='8'>8</li>
+                                         <li data-number='9'>9</li>
+                                         <li data-number='0'>0</li>
+                                        <li data-number='.'>.</li>
+                                        <li id="delete">X</li>
+                                      </ol>
+                                    </div>
+                                    <input type="submit" name="submit" class="form_submit exchangeMoneyToBase" data-redirect="exchange-money-to-base-review.html" id="submit" data-role="none" value="Next"/>
+                                </form>
+                            </div>    
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- /content -->
+        <aside>
+            <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
+                <div class="user_login_info">
+                    <div class="user_thumb_container">
+                        <div class="user_thumb">
+                            <img class="image_src" src="images/author.png" alt="" title="" />
+                        </div>
+                    </div>
+                    <div class="user_details">
+                        <p class="username" style="color: #fff;"></p>
+                    </div>
+                    <nav class="user-nav">
+                        <ul>
+                            <li class="dashboard"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Dashboard</span></a></li>
+                            <li class="editProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">My Profile</span></a></li>
+                            <li class="SendMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Send Money</span></a></li>
+                            <li class="RequestMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Request Money</span></a></li>
+                            <li class="withdrawMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Withdraw Money</span></a></li>
+                            <li class="exchangeMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Exchange Money</span></a></li>
+                            <li class="logout" style="cursor: pointer;" action="logout" data-redirect="login.html"><a><img src="images/icons/black/lock.png" alt="" title="" /><span style="font-size: 12px" class="log-out">Logout</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="close_loginpopup_button"><a href="#" data-rel="close"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            </div>
+        </aside>
+        <!-- /panel -->
+    </div>
+    <!-- /page -->
+
+    <!--Javascript Library Ends here-->
+    <script type="text/javascript">
+        // Login form validation
+        $('.moneyForm').validate({
+            rules: {
+                amount: {
+                    required: true
+                }                        
+            }
+        });
+
+        
+        $('.keys').on('click', 'li', function() {
+          var num = $(this).data('number')
+              $("#sendDisplay").val(function() {
+                    return this.value + num;
+              });
+        });
+
+        $('#delete').click(function(){
+            var text      = $('#sendDisplay').val();
+            var backSpace = text.substr(0, text.length-1);
+            $('#sendDisplay').val(backSpace);
+            return false;
+        });
+
+        $(window).on('load',function(){
+                    var site_url = localStorage.getItem('site_url');
+                    var token    = localStorage.getItem('token');
+                    var user_id  = localStorage.getItem('user_id');
+                    var url      = site_url+'get-exchange-to-base-currency';
+                    $.ajax({
+                    url : url,
+                    type : "get",
+                    //async : false,
+                    data : {'_token':token,'user_id':user_id},
+                    dataType : 'json',
+                    //data may contain three part status of 'success', 'message', 'errors' if success is 0 
+                    success:function(data){
+                        if(data.success.status==200){
+                            var datas = data.success.currencies;
+                            var output='';
+                            $.each(datas,function(index,data){
+                                output+=`
+                                    <option value="${data.id}">${data.code}</option>
+                                `;
+                            });
+                            $('#sendCurrency').html(output);
+                        }
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+            });
+        });
+       
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+    
+    <!--Css style starts here-->
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/color.css" />
+    
+    <!--Css style ends here-->
+
+    <!--Javascript Library Starts here-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/moment.js"></script>
+    
+    <!--Javascript Library Ends here-->
+    <style type="text/css">
+        .loginform {
+            width: 90%;
+            padding: 0 15px 15px 5%;
+            background: #fff;
+        }
+        .showCurrency{
+            background:#232b47;
+            width: 94.7%;
+            color: #fff;
+            padding: 9px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+         .center {
+            display: block !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 25%;
+            /*border-radius: 50px;*/
+        }
+    </style>
+</head>
+
+<body onload="showLoader();">
+    <div class="loader"></div>
+    <div data-role="page" id="features" class="secondarypage" data-theme="b">
+        <header>
+            <div data-role="header" data-position="fixed">
+                <div class="nav_left_button"><a href="#" onclick="window.history.back();"><img src="images/icons/left-arrow.png" alt="" title="" /></a></div>
+                <div class="nav_center_logo">
+                    <div class="p-title">
+                        <h2 style="font-size:16px">Review & Request</h2></div>
+                </div>
+                <div class="nav_right_button">
+                    <a href="#right-panel"><img src="images/icons/icons8-align-justify-80.png" alt="" title="" /></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content animate-bottom profileDiv" style="display: none">
+            <div class="pages_maincontent">
+                
+                <div class="page_content">
+
+                    <section class="margin-50" style="margin-top: 40px;">
+                            <!-- <div class="showCurrency"><p style="font-size:14px;padding:5px;text-align: center;" class="currencyAmount">1000 USD</p></div> -->
+                            <div class="showCurrency" style="text-align: center;"><h2 style="font-size: 14px">Requested amount&nbsp;:&nbsp;&nbsp;&nbsp;<span class="currencyAmount"></span></h2></div>
+                            <div class="loginform">
+                                    <input type="hidden" name="email" id="hiddenEmail">
+                                    <div class="showDetails" style="margin-top: 5px">
+                                        <div class="imgClass" style="width: 60px;float: left;">
+                                            <img  class="image_srcs" style="border-radius: 50%;height: 60px;margin-top: 8px" src="images/author.png" alt="" title="" />
+                                        </div>
+                                        <div class="InputText" style="width: 65%;float: right;margin-top: 19px;font-size: 14px;font-weight:bold;">
+                                            <p class="email"></p>
+                                        </div>
+                                     </div>
+                                    <br/><br/>
+                                    <h4 style="margin-top: 40px">Add Note</h4>
+                                    <textarea style="background: #ddd;" name="notes" id="notes" placeholder="Add a note"></textarea>
+                                    <span style="color: red;font-weight: bold" id="requestNote"></span>
+                                    <input type="submit" name="submit" action="request-money-pay" class="form_submit requestMoneyPay" data-redirect="request-money-success.html" id="submit" data-role="none" style="font-size: 14px" value="Confirm"/>
+                            </div>    
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- /content -->
+        <aside>
+            <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
+                <div class="user_login_info">
+                    <div class="user_thumb_container">
+                        <div class="user_thumb">
+                            <img class="image_src" src="images/author.png" alt="" title="" />
+                        </div>
+                    </div>
+                    <div class="user_details">
+                        <p class="username" style="color: #fff;"></p>
+                    </div>
+                    <nav class="user-nav" id="menuItem">
+                        <!--Load a dynamice html content for menu-->
+                    </nav>
+                </div>
+                <div class="close_loginpopup_button"><a href="#" data-rel="close"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            </div>
+        </aside>
+        <!-- /panel -->
+    </div>
+    <!-- /page -->
+
+    <!--Javascript Library Ends here-->
+    <script type="text/javascript">
+
+        $(window).on('load',function(){
+            let amount  = localStorage.getItem('amount');
+            let amountN = parseFloat(amount).toFixed(2);
+            $('.currencyAmount').text(amountN+' '+localStorage.getItem('currencyCode'));
+            $('.email').text(localStorage.getItem('hiddenEmail'));
+        });
+
+        //Get User Profile Image
+        $(window).on('load',function(){
+            let email     = localStorage.getItem('hiddenEmail');
+            let site_url  = localStorage.getItem('site_url');
+            let url       = localStorage.getItem('site_url')+'get-user-specific-details';
+            $.ajax({
+                url : url,
+                type : "get",
+                async : false,
+                data : {'email':email,'_token':localStorage.getItem('token')},
+                dataType : 'json',
+                //data may contain three part status of 'success', 'message', 'errors' 
+                success:function(data){
+                    if(data.success.status==200){
+                        if(data.success.user==null || data.success.user.picture==''){
+                            let srcs       = 'images/author.png';
+                            $('.image_srcs').attr('src',srcs);
+                        }else{
+                            let srcs       = site_url.replace('api/','')+'public/user_dashboard/profile/'+data.success.user.picture;
+                            $('.image_srcs').attr('src',srcs);
+                        }
+                    }
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+        //Show Loader starts here
+            let loader;
+            function showLoader() {
+                loader = setTimeout(showPage, 1000);
+            }
+            function showPage() {
+              $('.loader').css('display','none');
+              $('.profileDiv').css('display','block');
+            } 
+        //Show loader Ends here    
+       
+    </script>
+    
+</body>
+
+</html>

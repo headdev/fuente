@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+    
+    <!--Css style starts here-->
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/color.css" />
+    
+    <!--Css style ends here-->
+
+    <!--Javascript Library Starts here-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/moment.js"></script>
+    
+    <!--Javascript Library Ends here-->
+    <style type="text/css">
+        .ui-page-theme-b .ui-btn {
+            background-color: #fff !important;
+            border-color: transparent !important;
+            color: #000 !important;
+            text-shadow: none;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="features" class="secondarypage" data-theme="b">
+        <header>
+            <div data-role="header" data-position="fixed">
+                <div class="nav_left_button"><a href="#" onclick="window.history.back();"><img src="images/icons/left-arrow.png" alt="" title="" /></a></div>
+                <div class="nav_center_logo">
+                    <div class="p-title">
+                        <h2 style="font-size:14px">Update your profile</h2>
+                    </div>
+                </div>
+                <div class="nav_right_button">
+                    <a href="#right-panel"><img src="images/icons/icons8-align-justify-80.png" alt="" title="" /></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="pages_maincontent">
+                <div class="page_content">
+
+                    <section class="margin-50" style="margin-top: 10px;">
+                            
+                            <div class="loginform">
+                            <div class="successDiv">
+                                <div class="alert alert-success">
+                                  <p class="showSuccess"></p>
+                                </div>
+                            </div>
+                                                  
+                                <form id="LoginForm" class="emailForm" action="login" method="post">
+                                    <label>First name</label>
+                                    <input type="text" name="first_name" value="" id="first_name" class="form_input require first_name" placeholder="Please enter firstname" data-role="none" />
+                                    <label>Last name</label>
+                                    <input type="text" name="last_name" value="" id="last_name" class="form_input require last_name" placeholder="Please enter lastname" data-role="none" />
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" value="" id="phone" class="form_input require phone" placeholder="Please enter phone" data-role="none" />
+                                    <label>Email</label>
+                                    <input type="text" name="email" value="" id="email" class="form_input require email" placeholder="Please enter email" data-role="none" readonly />
+                                    
+                                    <label>Phrase</label>
+                                    <input type="text" name="phrase" value="" id="phrase" class="form_input require phrase" placeholder="Please enter phrase" data-role="none" />
+                                    <label>Country</label>
+                                    <select name="country" id="country" required="true">
+                                        <option value="">Choose one</option>
+                                    </select>
+                                    <input type="submit" name="submit" action="update-user-profile" class="form_submit updateProfile" data-redirect="edit-profile.html" id="submit" data-role="none" value="Update Profile"/>
+                                </form>
+                            </div>    
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- /content -->
+        <aside>
+            <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
+                <div class="user_login_info">
+                    <div class="user_thumb_container">
+                        <div class="user_thumb">
+                            <img class="image_src" src="images/author.png" alt="" title="" />
+                        </div>
+                    </div>
+                    <div class="user_details">
+                        <p class="username" style="color: #fff;"></p>
+                    </div>
+                  <nav class="user-nav">
+                        <ul>
+                            <li class="dashboard"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Dashboard</span></a></li>
+                            <li class="editProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">My Profile</span></a></li>
+                            <li class="SendMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Send Money</span></a></li>
+                            <li class="RequestMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Request Money</span></a></li>
+                            <li class="withdrawMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Withdraw Money</span></a></li>
+                            <li class="exchangeMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Exchange Money</span></a></li>
+                            <li class="logout" style="cursor: pointer;" action="logout" data-redirect="login.html"><a><img src="images/icons/black/lock.png" alt="" title="" /><span style="font-size: 12px" class="log-out">Logout</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="close_loginpopup_button"><a href="#" data-rel="close"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            </div>
+        </aside>
+        <!-- /panel -->
+    </div>
+    <!-- /page -->
+
+    <!--Javascript Library Ends here-->
+    <script type="text/javascript">
+        // Login form validation
+        $('.emailForm').validate({
+            rules: {
+                email: {
+                    required: true,
+                    email:true
+                }                        
+            }
+        });
+        //Get User Profile details
+        $(window).on('load',function(){
+            $('.successDiv').hide();
+            var user_id  = localStorage.getItem('user_id');
+            var token    = localStorage.getItem('token');
+            var site_url = localStorage.getItem('site_url');
+            var url      = site_url+'get-user-profile';
+            if(user_id && token){
+                $.ajax({
+                    url : url,
+                    type : "get",
+                    async : false,
+                    data : {
+                        '_token':token,
+                        'user_id'    :user_id
+                    },
+                    dataType : 'json',
+                    //data may contain three part status of 'success', 'message', 'errors' if success is 0 
+                    success:function(data){
+                        var countries = data.success.country;
+                        var output    = '';
+                        if(data.success.status==200){
+                            $('.first_name').val(data.success.user.first_name);
+                            $('.last_name').val(data.success.user.last_name);
+                            $('.phone').val(data.success.user.phone);
+                            $('.email').val(data.success.user.email);
+                            $('.phrase').val(data.success.user.phrase);
+                            $.each(countries,function(index,country){
+                                output+=`
+                                    <option value="${country.id}">${country.name}</option>
+                                `;
+                            });
+                            $('#country').html(output);
+
+                            //Make Selected by database user country value
+
+                            $('[name=country] option').filter(function() { 
+                                return ($(this).val() == data.success.user.country_id); //To select Blue
+                            }).prop('selected', true);
+
+                            //Show User Country text
+
+                            var selectedText = $("#country option:selected").text();
+                            $('#country-button span').text(selectedText);
+                        }
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                });
+            }
+             
+        });
+    </script>
+    
+</body>
+
+</html>

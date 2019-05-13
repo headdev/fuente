@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+    
+    <!--Css style starts here-->
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/color.css" />
+    
+    <!--Css style ends here-->
+
+    <!--Javascript Library Starts here-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/moment.js"></script>
+    
+    <!--Javascript Library Ends here-->
+</head>
+
+<body onload="showLoader();">
+    <div class="loader"></div>
+    <div data-role="page" id="features" class="secondarypage" data-theme="b">
+        <header>
+            <div data-role="header" data-position="fixed">
+                <div class="nav_left_button"><a href="#" onclick="window.history.back();"><img src="images/icons/left-arrow.png" alt="" title="" /></a></div>
+                <div class="nav_center_logo">
+                    <div class="p-title">
+                        <h2 style="font-size:16px">Transaction</h2></div>
+                </div>
+                <div class="nav_right_button">
+                    <a href="#right-panel"><img src="images/icons/icons8-align-justify-80.png" alt="" title="" /></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content animate-bottom myDiv" style="display: none">
+            <div class="pages_maincontent">
+                <div class="page_content">
+                    <section class="margin-50">
+                        <div class="tabs_content transaction" id="b-tabs">
+                            <div data-role="tabs" id="tabs">
+                                <div data-role="navbar">
+                                    <ul>
+                                        <li><a href="#one" class="ui-btn-active">All</a></li>
+                                        <li><a href="#two">Money In</a></li>
+                                        <li><a href="#three">Money Out</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <!--For All Transactions starts here-->
+
+                                <div id="one">
+                                    <div class="card-main">
+                                        <div class="card-header">
+                                            <h2 style="font-size: 18px !important">Pending</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allPending">
+                                                <tbody>
+                                                    <!-- Dynamic all pending transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="card-header">
+                                            <h2 style="font-size: 18px !important">Completed</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allSuccess">
+                                                <tbody>
+                                                    <!-- Dynamic all successful transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--For All Transactions ends here-->
+
+                                <!--For All MoneyIn Transactions starts here--> 
+
+                                <div id="two">
+                                    <div class="card-main">
+                                        <div class="card-header">
+                                            <h2 style="font-size: 18px !important">Pending</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyInPending">
+                                                <tbody>
+                                                        <!-- Dynamic all pending moneyIn transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="card-header">
+                                            <h2 style="font-size: 18px !important">Completed</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyInSuccess">
+                                                <tbody>
+                                                        <!-- Dynamic all successful moneyIn transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--For All MoneyIn Transactions ends here-->
+
+                                <!--For All MoneyOut Transactions ends here-->
+
+
+                                <div id="three">
+                                    <div class="card-main">
+                                        <div class="card-header">
+                                            <h2 style="font-size: 18px !important">Pending</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyOutPending">
+                                                <tbody>
+                                                      <!-- Dynamic all pending moneyOut transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="card-header">
+                                            <h2 style="font-size: 18px !important">Completed</h2></div>
+                                        <div class="card-body">
+                                            <table class="table allMoneyOutSuccess">
+                                                <tbody>
+                                                    <!-- Dynamic all successful moneyOut transaction List goes here-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--For All MoneyOut Transactions ends here-->
+
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- /content -->
+        <aside>
+            <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
+                <div class="user_login_info">
+                    <div class="user_thumb_container">
+                        <div class="user_thumb">
+                            <img class="image_src" src="images/author.png" alt="" title="" />
+                        </div>
+                    </div>
+                    <div class="user_details">
+                        <p class="username" style="color: #fff;"></p>
+                    </div>
+                    <nav class="user-nav" id="menuItem">
+                        <!--Load a dynamice html content for menu-->
+                    </nav>
+                </div>
+                <div class="close_loginpopup_button"><a href="#" data-rel="close"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            </div>
+        </aside>
+        <!-- /panel -->
+    </div>
+    <!-- /page -->
+    <script type="text/javascript">
+
+            $(window).on('load',function(){
+                $('.username').text(localStorage.getItem('username'));
+                let site_url  = localStorage.getItem('site_url');
+                let url       = site_url+'activityall';
+                let user_id   = localStorage.getItem('user_id');
+                let token     = localStorage.getItem('token');
+                $.ajax({
+                        url : url,
+                        type : "get",
+                        async : false,
+                        data : {'user_id':user_id,'_token':token},
+                        dataType : 'json',
+                        //data may contain three part status of 'success', 'message', 'errors' if success is 0 
+                        success:function(data){                       
+                                let datas           = data.transactions;
+                                let outputPending   = '';
+                                let outputSuccess   = '';
+                                let moneyInPending  = '';
+                                let moneyInSuccess  = '';
+                                let moneyOutPending = '';
+                                let moneyOutSuccess = '';
+
+                                //For all transactions starts here
+                                allTransactions(datas,outputPending,outputSuccess,site_url);
+                                //For all transactions ends here
+
+                                //For all moneyIn transactions starts here
+                                allMoneyInTransactions(datas,moneyInPending,moneyInSuccess,site_url);                               
+                                //For all moneyIn ends here
+
+                                //For all moneyOut Starts here
+                                allMoneyOutTransactions(datas,moneyOutPending,moneyOutSuccess,site_url);
+                                //For all moneyOut ends here
+
+                        },
+                        error: function(errorThrown){
+                                        console.log(errorThrown);
+                        }
+                });
+            });
+        
+            //For all transactions starts here
+            function allTransactions(datas,outputPending,outputSuccess,site_url){
+                $.each(datas,function(index,data){
+                        let first_name = capitalizeFirstLetter(data.f_name);
+                        let last_name  = capitalizeFirstLetter(data.l_name);
+                        let date       = data.t_created_at;
+                        let finalDate  = moment(date).format("YYYY-MM-DD"); //2014-07-10
+                        let image_url  = site_url.replace('api/','');
+                        let imgSrc;
+                        let imgPhoto      = data.photo;
+                        let merchantPhoto = data.logo;
+                        let amnt          = data.total;
+                        let txtClass      = amnt.match(/-/g)?'txtDanger':'txtSuccess';
+                        let total         = amnt.match(/-/g)?amnt:'+'+amnt;
+                        let status        = data.status;
+                        let statusMsg;
+                        if(imgPhoto!=''){ 
+                                imgSrc = image_url+"public/user_dashboard/profile/"+imgPhoto;
+                        }else{
+                             imgSrc = "images/author.png";
+                        }
+                        if(data.status=='Pending'){
+                                    if(data.transaction_type=='Transferred'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Transferred-Pending</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px;" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    } 
+                                    if(data.transaction_type=='Received'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Received-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}"> ${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Request_From'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Sent-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}"> ${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Request_To'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Received-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }  
+                                    if(data.transaction_type=='Withdrawal'){
+                                        let imgPhoto = data.payment_method_name;
+                                        imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                        let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto; 
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payout-Pending</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html"data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Deposit'){
+                                        let imgPhoto = data.payment_method_name;
+                                        imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                        let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto; 
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Deposit-Pending</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">+${data.subtotal} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Voucher_Created' || data.transaction_type=='Voucher_Activated'){
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Exchange_From'){
+                                        let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Exchange From-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Exchange_To'){
+                                        let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Exchange To-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Payment_Sent'){
+                                         let imgSrc2;
+                                         //alert(merchantPhoto);
+                                            if(merchantPhoto!=null){
+                                                    imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                            }else{
+                                                    imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                            }
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Sent-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Payment_Received'){
+                                        let imgSrc2;
+                                        if(merchantPhoto!=null){
+                                                imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                        }else{
+                                                imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                        }
+                                        outputPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Received-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }             
+                        }else{
+                                    if(data.transaction_type=='Request_From'){
+                                        if(status=='Success'){
+                                            statusMsg = 'Request Sent';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Request Sent'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Request Sent'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Request_To'){
+                                        if(status=='Success'){
+                                            statusMsg = 'Request Received';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Request Received'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Request Received'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Received'){
+                                        if(status=='Success'){
+                                            statusMsg = 'Received';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Received'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Received'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    } 
+                                    if(data.transaction_type=='Transferred'){
+                                        if(status=='Success'){
+                                            statusMsg = 'Transferred';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Transferred'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Transferred'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    } 
+                                    if(data.transaction_type=='Withdrawal'){
+                                        let imgPhoto = data.payment_method_name;
+                                        imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                        let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto; 
+                                        if(status=='Success'){
+                                            statusMsg = 'Payout';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Payout'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Payout'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Deposit'){
+                                        let imgPhoto = data.payment_method_name;
+                                        imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                        let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto;        
+                                        if(status=='Success'){
+                                            statusMsg = 'Deposit';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Deposit'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Deposit'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">+${data.subtotal} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    //For future use
+                                    if(data.transaction_type=='Voucher_Created' || data.transaction_type=='Voucher_Activated'){
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    //For future use
+                                    if(data.transaction_type=='Exchange_From'){
+                                          let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                            if(status=='Success'){
+                                                statusMsg = 'Exchange From';
+                                            }else{
+                                                if(status=='Blocked'){
+                                                    statusMsg = 'Exchange From'+'-'+'Cancelled';
+                                                }else{  
+                                                    statusMsg = 'Exchange From'+'-'+status;
+                                                }
+                                            }
+                                          outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Exchange_To'){
+                                        let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                        if(status=='Success'){
+                                            statusMsg = 'Exchange To';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Exchange To'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Exchange To'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    } 
+                                    if(data.transaction_type=='Payment_Sent'){
+                                        let imgSrc2;
+                                        if(merchantPhoto!=null){
+                                                imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                        }else{
+                                                imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                        }
+                                    
+                                        if(status=='Success'){
+                                            statusMsg = 'Payment Sent';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Payment Sent'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Payment Sent'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${data.total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                    if(data.transaction_type=='Payment_Received'){
+                                        let imgSrc2;
+                                        if(merchantPhoto!=null){
+                                                imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                        }else{
+                                                imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                        }
+                                        if(status=='Success'){
+                                            statusMsg = 'Payment Received';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Payment Received'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Payment Received'+'-'+status;
+                                            }
+                                        }
+                                        outputSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${data.total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }    
+                        }
+                });
+                if(outputPending==''){
+                  $('.allPending tbody').html('<h4 style="text-align:center;font-size:12px;">No Record Found!</h4>');
+                }
+                if(outputPending!=''){
+                  $('.allPending tbody').html(outputPending);
+                }
+                if(outputSuccess==''){
+                  $('.allSuccess tbody').html('<h4 style="text-align:center;font-size:12px;">No Record Found!</h4>');
+                }
+                if(outputSuccess!=''){
+                  $('.allSuccess tbody').html(outputSuccess);
+                }
+            }
+            //For all transactions ends here
+        
+            //For all Money In Transactions Starts here
+            function allMoneyInTransactions(datas,moneyInPending,moneyInSuccess,site_url){
+                $.each(datas,function(index,data){
+                                        let first_name = capitalizeFirstLetter(data.f_name);
+                                        let last_name  = capitalizeFirstLetter(data.l_name);
+                                        let date       = data.t_created_at;
+                                        let finalDate  = moment(date).format("YYYY-MM-DD"); //2014-07-10
+                                        let image_url  = site_url.replace('api/','');
+                                        let imgSrc;
+                                        let imgPhoto      = data.photo;
+                                        let merchantPhoto = data.logo;
+                                        let amnt          = data.total;
+                                        let txtClass      = amnt.match(/-/g)?'txtDanger':'txtSuccess';
+                                        let total         = amnt.match(/-/g)?amnt:'+'+amnt;
+                                        let status        = data.status;
+                                        let statusMsg;
+                                        if(imgPhoto!=''){
+                                             imgSrc = image_url+"public/user_dashboard/profile/"+imgPhoto;
+                                        }else{
+                                             imgSrc = "images/author.png";
+                                        }
+                                        if(data.status=='Pending'){
+                                                if(data.transaction_type=='Payment_Received' || data.transaction_type=='Deposit' || data.transaction_type=='Received' || data.transaction_type=='Voucher_Activated' || data.transaction_type=='Request_From' || data.transaction_type=='Exchange_To'){
+                                                    
+                                                    if(data.transaction_type=='Exchange_To'){
+                                                        let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Exchange To-Pending</a></h4></td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    }
+                                                    if(data.transaction_type=='Received'){
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Received-Pending</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                    if(data.transaction_type=='Deposit'){
+                                                        let imgPhoto = data.payment_method_name;
+                                                        imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                                        let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto; 
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Deposit-Pending</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">+${data.subtotal} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    }
+                                                    if(data.transaction_type=='Voucher_Activated'){
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px;">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                    if(data.transaction_type=='Request_From'){
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Sent-Pending</a></h4></td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                    if(data.transaction_type=='Payment_Received'){
+                                                        let imgSrc2;
+                                                        if(merchantPhoto!=null){
+                                                                imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                                        }else{
+                                                                imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                                        }
+                                                        moneyInPending +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td style="font-size:12px;">
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Received-Pending</a></h4></td>
+                                                                <td style="font-size:12px;">
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                }
+                                        }else{
+                                                if(data.transaction_type=='Payment_Received' || data.transaction_type=='Deposit' || data.transaction_type=='Received' || data.transaction_type=='Voucher_Activated' || data.transaction_type=='Request_From' || data.transaction_type=='Request_To' || data.transaction_type=='Transferred' || data.transaction_type=='Exchange_To'){
+        
+                                                    
+                                                    if(data.transaction_type=='Exchange_To'){
+                                                        let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                                        if(status=='Success'){
+                                                            statusMsg = 'Exchange To';
+                                                        }else{
+                                                            if(status=='Blocked'){
+                                                                statusMsg = 'Exchange To'+'-'+'Cancelled';
+                                                            }else{  
+                                                                statusMsg = 'Exchange To'+'-'+status;
+                                                            }
+                                                        }
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    }
+                                                    if(data.transaction_type=='Transferred'){
+                                                            if(status=='Success'){
+                                                                statusMsg = 'Transferred';
+                                                            }else{
+                                                                if(status=='Blocked'){
+                                                                    statusMsg = 'Transferred'+'-'+'Cancelled';
+                                                                }else{  
+                                                                    statusMsg = 'Transferred'+'-'+status;
+                                                                }
+                                                            }
+                                                        if(status=='Refund'){
+                                                            moneyInSuccess +=`
+                                                                <tr>
+                                                                    <td>
+                                                                        <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                        <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                    </td>
+                                                                </tr>
+                                                            `;
+                                                        }
+                                                    }
+                                                    if(data.transaction_type=='Received'){
+                                                        if(status=='Success'){
+                                                            statusMsg = 'Received';
+                                                        }else{
+                                                            if(status=='Blocked'){
+                                                                statusMsg = 'Received'+'-'+'Cancelled';
+                                                            }else{  
+                                                                statusMsg = 'Received'+'-'+status;
+                                                            }
+                                                        }
+                                                        if(status!='Refund'){
+                                                            moneyInSuccess +=`
+                                                                <tr>
+                                                                    <td>
+                                                                        <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                        <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                    </td>
+                                                                </tr>
+                                                            `;
+                                                        }
+                                                    } 
+                                                    
+                                                    if(data.transaction_type=='Request_From'){
+                                                        if(status=='Success'){
+                                                            statusMsg = 'Request Sent';
+                                                        }else{
+                                                            if(status=='Blocked'){
+                                                                statusMsg = 'Request Sent'+'-'+'Cancelled';
+                                                            }else{  
+                                                                statusMsg = 'Request Sent'+'-'+status;
+                                                            }
+                                                        }
+                                                        if(status!='Refund'){
+                                                            moneyInSuccess +=`
+                                                                <tr>
+                                                                    <td>
+                                                                        <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                        <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                                    <td>
+                                                                        <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                    </td>
+                                                                </tr>
+                                                            `;
+                                                        }
+                                                    } 
+
+                                                    if(data.transaction_type=='Request_To'){
+                                                        if(status=='Success'){
+                                                            statusMsg = 'Request Received';
+                                                        }else{
+                                                            if(status=='Blocked'){
+                                                                statusMsg = 'Request Received'+'-'+'Cancelled';
+                                                            }else{  
+                                                                statusMsg = 'Request Received'+'-'+status;
+                                                            }
+                                                        }
+                                                        if(status=='Refund'){
+                                                            moneyInSuccess +=`
+                                                                <tr>
+                                                                    <td>
+                                                                        <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                                        <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                                    <td>
+                                                                        <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                    </td>
+                                                                </tr>
+                                                            `;
+                                                        }
+                                                    }
+                                                    if(data.transaction_type=='Deposit'){
+                                                        let imgPhoto = data.payment_method_name;
+                                                        imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                                        let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto; 
+                                                        if(status=='Success'){
+                                                            statusMsg = 'Deposit';
+                                                        }else{
+                                                            if(status=='Blocked'){
+                                                                statusMsg = 'Deposit'+'-'+'Cancelled';
+                                                            }else{  
+                                                                statusMsg = 'Deposit'+'-'+status;
+                                                            }
+                                                        }
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">+${data.subtotal} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    }
+                                                    //For future use
+                                                    if(data.transaction_type=='Voucher_Activated'){
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td>
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    }
+                                                    //For future use 
+                                                    if(data.transaction_type=='Payment_Received'){
+                                                        let imgSrc2;
+                                                        if(merchantPhoto!=null){
+                                                                imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                                        }else{
+                                                                imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                                        }
+                                                        if(status=='Success'){
+                                                            statusMsg = 'Payment Received';
+                                                        }else{
+                                                            if(status=='Blocked'){
+                                                                statusMsg = 'Payment Received'+'-'+'Cancelled';
+                                                            }else{  
+                                                                statusMsg = 'Payment Received'+'-'+status;
+                                                            }
+                                                        }
+                                                        moneyInSuccess +=`
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                                </td>
+                                                                <td style="font-size:12px;">
+                                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                                <td style="font-size:12px;">
+                                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        `;
+                                                    } 
+                                                }    
+                                        }
+                });
+                if(moneyInPending==''){
+                  $('.allMoneyInPending tbody').html('<h4 style="text-align:center;font-size:12px;">No Record Found!</h4>');
+                }
+                if(moneyInPending!=''){
+                  $('.allMoneyInPending tbody').html(moneyInPending);
+                }
+                if(moneyInSuccess==''){
+                  $('.allMoneyInSuccess tbody').html('<h4 style="text-align:center;font-size:12px;">No Record Found!</h4>');
+                }
+                if(moneyInSuccess!=''){
+                  $('.allMoneyInSuccess tbody').html(moneyInSuccess);
+                }
+            }
+            //For all Money In Transactions ends here
+
+            //For all Money Out Transactions Starts here
+            function allMoneyOutTransactions(datas,moneyOutPending,moneyOutSuccess,site_url){
+                $.each(datas,function(index,data){
+                    let first_name = capitalizeFirstLetter(data.f_name);
+                    let last_name  = capitalizeFirstLetter(data.l_name);
+                    let date       = data.t_created_at;
+                    let finalDate  = moment(date).format("YYYY-MM-DD"); //2014-07-10
+                    let image_url  = site_url.replace('api/','');
+                    let imgSrc;
+                    let imgPhoto      = data.photo;
+                    let merchantPhoto = data.logo;
+                    let amnt          = data.total;
+                    let txtClass      = amnt.match(/-/g)?'txtDanger':'txtSuccess';
+                    let total         = amnt.match(/-/g)?amnt:'+'+amnt;
+                    let status        = data.status;
+                    let statusMsg;
+                    if(imgPhoto!=''){
+                         imgSrc = image_url+"public/user_dashboard/profile/"+imgPhoto;
+                    }else{
+                         imgSrc = "images/author.png";
+                    }
+                    if(data.status=='Pending'){
+                            if(data.transaction_type=='Request_To' || data.transaction_type=='Payment_Sent' || data.transaction_type=='Withdrawal' || data.transaction_type=='Transferred' || data.transaction_type=='Voucher_Created' || data.transaction_type=='Exchange_From'){
+                                if(data.transaction_type=='Transferred'){
+                                    moneyOutPending +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Transferred-Pending</a></h4></td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                } 
+                                if(data.transaction_type=='Withdrawal'){
+                                    let imgPhoto = data.payment_method_name;
+                                    imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                    let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto; 
+                                    moneyOutPending +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payout-Pending</a></h4></td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }
+                                if(data.transaction_type=='Voucher_Created'){
+                                    moneyOutPending +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4>
+
+                                            </td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                } 
+                                if(data.transaction_type=='Payment_Sent'){
+                                        let imgSrc2;
+                                        if(merchantPhoto!=null){
+                                                imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                        }else{
+                                                imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                        }
+                                        moneyOutPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Payment Sent-Pending</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                }
+
+                                if(data.transaction_type=='Request_To'){
+                                    moneyOutPending +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Request Received-Pending</a></h4></td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }
+
+                                if(data.transaction_type=='Exchange_From'){
+                                          let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                          moneyOutPending +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Exchange From-Pending</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                      
+                            }
+                    }else{
+                            if(data.transaction_type=='Received' || data.transaction_type=='Request_From' || data.transaction_type=='Request_To' || data.transaction_type=='Payment_Sent' || data.transaction_type=='Withdrawal' || data.transaction_type=='Transferred' || data.transaction_type=='Voucher_Created' || data.transaction_type=='Exchange_From'){
+                                
+                                if(data.transaction_type=='Received'){
+                                        if(status=='Success'){
+                                            statusMsg = 'Received';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Received'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Received'+'-'+status;
+                                            }
+                                        }
+                                    if(status=='Refund'){
+                                        moneyOutSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                </td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                } 
+                                if(data.transaction_type=='Transferred'){
+                                        if(status=='Success'){
+                                            statusMsg = 'Transferred';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Transferred'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Transferred'+'-'+status;
+                                            }
+                                        }
+                                    if(status!='Refund'){
+                                        moneyOutSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                                </td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                } 
+                                if(data.transaction_type=='Withdrawal'){
+                                    let imgPhoto = data.payment_method_name;
+                                    imgPhoto     = imgPhoto.toLowerCase()+'.jpg';
+                                    let imgSrc   = image_url+"public/images/payment_gateway/"+imgPhoto; 
+                                    if(status=='Success'){
+                                        statusMsg = 'Payout';
+                                    }else{
+                                        if(status=='Blocked'){
+                                            statusMsg = 'Payout'+'-'+'Cancelled';
+                                        }else{  
+                                            statusMsg = 'Payout'+'-'+status;
+                                        }
+                                    }
+                                    moneyOutSuccess +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4>
+                                            </td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }
+                                //For future use
+                                if(data.transaction_type=='Voucher_Created'){
+                                    moneyOutSuccess +=`
+                                        <tr>
+                                            <td>
+                                                <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                            </td>
+                                            <td>
+                                                <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.payment_method_name}</a></h2>
+                                                <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">Voucher</a></h4></td>
+                                            <td>
+                                                <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }
+                                //For future use
+                                if(data.transaction_type=='Payment_Sent'){
+                                        let imgSrc2;
+                                        if(merchantPhoto!=null){
+                                                imgSrc2 = image_url+"public/user_dashboard/merchant/thumb/"+merchantPhoto;
+                                        }else{
+                                                imgSrc2 = image_url+"public/uploads/merchant/merchant.jpg";;
+                                        }
+                                        if(status=='Success'){
+                                            statusMsg = 'Payment Sent';
+                                        }else{
+                                            if(status=='Blocked'){
+                                                statusMsg = 'Payment Sent'+'-'+'Cancelled';
+                                            }else{  
+                                                statusMsg = 'Payment Sent'+'-'+status;
+                                            }
+                                        }
+                                        moneyOutSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc2}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td style="font-size:12px;">
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${data.merchant_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td style="font-size:12px;">
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                }
+
+                                if(data.transaction_type=='Request_To'){
+                                    if(status=='Success'){
+                                        statusMsg = 'Request Received';
+                                    }else{
+                                        if(status=='Blocked'){
+                                            statusMsg = 'Request Received'+'-'+'Cancelled';
+                                        }else{  
+                                            statusMsg = 'Request Received'+'-'+status;
+                                        }
+                                    }
+                                    //alert(status);
+                                    if(status!='Refund'){
+                                        moneyOutSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                }
+
+                                if(data.transaction_type=='Request_From'){
+                                    if(status=='Success'){
+                                        statusMsg = 'Request Sent';
+                                    }else{
+                                        if(status=='Blocked'){
+                                            statusMsg = 'Request Sent'+'-'+'Cancelled';
+                                        }else{  
+                                            statusMsg = 'Request Sent'+'-'+status;
+                                        }
+                                    }
+                                    if(status=='Refund'){
+                                        moneyOutSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${first_name} ${last_name}</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                }
+
+                                if(data.transaction_type=='Exchange_From'){
+                                          let imgSrc   = image_url+"public/frontend/images/exchange.png";
+                                            if(status=='Success'){
+                                                statusMsg = 'Exchange From';
+                                            }else{
+                                                if(status=='Blocked'){
+                                                    statusMsg = 'Exchange From'+'-'+'Cancelled';
+                                                }else{  
+                                                    statusMsg = 'Exchange From'+'-'+status;
+                                                }
+                                            }
+                                          moneyOutSuccess +=`
+                                            <tr>
+                                                <td>
+                                                    <a data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><img src="${imgSrc}" alt="" title="" style="width:44px;height:42px;border-radius:50%;margin-top:8px" /></a>
+                                                </td>
+                                                <td>
+                                                    <h2><a style="color:#000;font-size:12px" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">&nbsp;</a></h2>
+                                                    <h4><a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade">${statusMsg}</a></h4></td>
+                                                <td>
+                                                    <a style="color:#000" data-rel="${data.id}" class="transaction_row" href="#" data-redirect="transaction-details.html" data-transition="slidefade"><p style="font-size:12px;margin-top:8px">${finalDate}</p><span style="font-size:12px" class="${txtClass}">${total} ${data.curr_code}</span></a>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }
+                                      
+                            }    
+                    }
+                });
+                if(moneyOutPending==''){
+                  $('.allMoneyOutPending tbody').html('<h4 style="text-align:center;font-size:12px;">No Record Found!</h4>');
+                }
+                if(moneyOutPending!=''){
+                  $('.allMoneyOutPending tbody').html(moneyOutPending);
+                }
+                if(moneyOutSuccess==''){
+                  $('.allMoneyOutSuccess tbody').html('<h4 style="text-align:center;font-size:12px;">No Record Found!</h4>');
+                }
+                if(moneyOutSuccess!=''){
+                  $('.allMoneyOutSuccess tbody').html(moneyOutSuccess);
+                }
+            }
+            //For all Money Out Transactions Ends here
+
+            //Show Loader starts here
+            var loader;
+            function showLoader() {
+                loader = setTimeout(showPage, 1000);
+            }
+            function showPage() {
+              $('.loader').css('display','none');
+              $('.myDiv').css('display','block');
+            } 
+            //Show loader Ends here    
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+    
+    <!--Css style starts here-->
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/color.css" />
+    
+    <!--Css style ends here-->
+
+    <!--Cordova Js Starts here-->
+    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
+    
+    <!--Cordova Js Ends here-->
+
+    <!--Javascript Library Starts here-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/moment.js"></script>
+    
+    <!--Javascript Library Ends here-->
+    <style type="text/css">
+        .loginform {
+            width: 90%;
+            padding: 0 15px 15px 5%;
+            background: #fff;
+        }
+        .succesPage{
+            background:#232b47;
+            /*width: 94.7%;*/
+            color: #fff;
+            padding: 42px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .center {
+            display: block !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 25%;
+            /*border-radius: 50px;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="features" class="secondarypage" data-theme="b">
+        <header>
+            <div data-role="header" data-position="fixed">
+                <!-- <div class="nav_left_button"><a href="#" onclick="window.history.back();"><img src="images/icons/left-arrow.png" alt="" title="" /></a></div> -->
+                <div class="nav_left_button"><a href="#"><img style="display: none" src="images/icons/left-arrow.png" alt="" title="" /></a></div>
+                <div class="nav_center_logo">
+                    <div class="p-title">
+                        <h2 style="font-size:14px">Payment Success</h2>
+                    </div>
+                </div>
+                <div class="nav_right_button">
+                    <a href="#right-panel"><img src="images/icons/icons8-align-justify-80.png" alt="" title="" /></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="pages_maincontent">
+                <div class="page_content">
+
+                    <section class="margin-50" style="margin-top: 20px;">
+                            <!-- <div class="succesPage"><img class="center" src="images/icons/success.png" alt="" title="" /></div> -->
+                            <div class="successform" style="width: 90%;padding: 0 15px 15px 5%;">
+                                    <img class="center" src="images/icons/success.png" alt="" title="" />
+                                    <h2 style="text-align: center;font-size:14px">Success!</h2>
+                                    <h2 style="text-align: center;font-size:14px">Your Money Successfully Sent.</h2>
+                                    <img class="center image_srcs" style="border-radius: 140px !important" src="images/author.png" alt="" title="" />
+                                    <h4 style="text-align: center;"><strong><span class="receiver"></span></strong></h4>
+                                    <h5 style="text-align: center;">Total Amount : <span class="finalAmnt"></span></h5>  
+                                    <input type="submit" name="submit" class="form_submit success" data-redirect="profile.html" id="submit" data-role="none" style="color: #232b47" value="Ok"/>
+                            </div>    
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- /content -->
+        <aside>
+            <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
+                <div class="user_login_info">
+                    <div class="user_thumb_container">
+                        <div class="user_thumb">
+                            <img class="image_src" src="images/author.png" alt="" title="" />
+                        </div>
+                    </div>
+                    <div class="user_details">
+                        <p class="username" style="color: #fff;"></p>
+                    </div>
+                    <nav class="user-nav">
+                        <ul>
+                            <li class="dashboard"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Dashboard</span></a></li>
+                            <li class="editProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">My Profile</span></a></li>
+                            <li class="SendMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Send Money</span></a></li>
+                            <li class="RequestMoneyProfile"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Request Money</span></a></li>
+                            <li class="withdrawMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Withdraw Money</span></a></li>
+                            <li class="exchangeMoney"><a href="#"><img src="images/icons/right-arrow.png" alt="" title="" /><span style="font-size: 12px">Exchange Money</span></a></li>
+                            <li class="logout" style="cursor: pointer;" action="logout" data-redirect="login.html"><a><img src="images/icons/black/lock.png" alt="" title="" /><span style="font-size: 12px" class="log-out">Logout</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="close_loginpopup_button"><a href="#" data-rel="close"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            </div>
+        </aside>
+        <!-- /panel -->
+    </div>
+    <!-- /page -->
+
+    <!--Javascript Library Ends here-->
+
+    <script type="text/javascript">
+        //Get user profile image
+        $(window).on('load',function(){
+            let email = localStorage.getItem('hiddenEmail');
+            $.ajax({
+                url : localStorage.getItem('site_url')+'get-user-specific-details',
+                type : "get",
+                async : false,
+                data : {'email':email,'_token':localStorage.getItem('token')},
+                dataType : 'json',
+                //data may contain three part status of 'success', 'message', 'errors' 
+                success:function(data){
+                    if(data.success.status==200){
+                        if(data.success.user==null || data.success.user.picture==''){
+                            let srcs       = 'images/author.png';
+                            $('.receiver').text(email);
+                            $('.image_srcs').attr('src',srcs);
+                        }else{
+                            let srcs       = localStorage.getItem('image_url')+'public/user_dashboard/profile/'+data.success.user.picture;
+                            let username  = data.success.user.first_name+' '+data.success.user.last_name;
+                            $('.receiver').text(username);
+                            $('.image_srcs').attr('src',srcs);
+                        }
+                        $('.finalAmnt').text(localStorage.getItem('amount')+' '+localStorage.getItem('currencyCode'));
+                    }
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
